@@ -11,6 +11,14 @@ public class RunTest21
 		
 		Thread t = new Thread(new Worker());
 		t.start();
+		try
+		{
+			t.join();
+		} catch (InterruptedException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		long end = System.currentTimeMillis();		
 		System.out.println("ended in "+(end-start)/1000.0+" seconds");
