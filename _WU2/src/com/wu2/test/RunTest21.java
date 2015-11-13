@@ -16,7 +16,7 @@ public class RunTest21
 			t.join();
 		} catch (InterruptedException e)
 		{ 
-			System.out.println("X21");
+			System.out.println("X219..c");
 		}
 		
 		long end = System.currentTimeMillis();		
