@@ -16,8 +16,7 @@ public class RunTest21
 			t.join();
 		} catch (InterruptedException e)
 		{
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println("oops");
 		}
 		
 		long end = System.currentTimeMillis();		
