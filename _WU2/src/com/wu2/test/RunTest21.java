@@ -15,8 +15,7 @@ public class RunTest21
 		{
 			t.join();
 		} catch (InterruptedException e)
-		{
-			System.out.println("oops");
+		{ 
 			System.out.println("X21");
 		}
 		
