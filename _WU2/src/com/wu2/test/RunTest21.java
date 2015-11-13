@@ -16,7 +16,7 @@ public class RunTest21
 			t.join();
 		} catch (InterruptedException e)
 		{ 
-			System.out.println("X219..c this is me after revisions!");
+			System.out.println("X219..c this is me after revisions! 2");
 		}
 		
 		long end = System.currentTimeMillis();		
