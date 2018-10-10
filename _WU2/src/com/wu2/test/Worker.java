@@ -7,7 +7,7 @@ public class Worker implements Runnable
 	public void run()
 	{
 		//WOW this is dude 2
-		System.out.println(Thread.currentThread().getName()+" PING");
+		System.out.println(Thread.currentThread().getName()+" PONG");
 		//don't go post this line.
 		
 	}
