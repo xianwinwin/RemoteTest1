@@ -4,7 +4,7 @@ public class RunTest21
 {
 	public static void main(String args[])
 	{		
-		System.out.println("start x-37888");
+		System.out.println("start x-000");
 		long start = System.currentTimeMillis();
 		
 		System.out.println("program starts...");
