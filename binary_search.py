@@ -32,7 +32,7 @@ if __name__=='__main__':
 	arry = [random.randint(0, arry_len*2) for _ in range(0,arry_len)]
 	arry.sort() #nlogn	
 	bs = BinarySearch(arry)
-	f = bs.find(80)
+	f = bs.find(79)
 	print ('found it',f)
 
 	print ("END!")
