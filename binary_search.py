@@ -52,7 +52,16 @@ def test3():
 	bs = BinarySearch(arry)
 	f = bs.find(arry[91])
 	print ('found it',f)
-	
+
+
+def test4():
+	print ("test 4")
+	arry = []
+	arry.sort() #nlogn	
+	bs = BinarySearch(arry)
+	f = bs.find(10)
+	print ('found it',f)
+
 if __name__=='__main__':
 	print ("Start...")
 
@@ -73,6 +82,12 @@ if __name__=='__main__':
 	exec_time = (datetime.now() - start).total_seconds()	
 	print ("test 3 exec time: ",exec_time)
 
+
+	print ("*"*32)
+	start = datetime.now()
+	test4()
+	exec_time = (datetime.now() - start).total_seconds()	
+	print ("test 4 exec time: ",exec_time)
 
 	print ("END!")
 
