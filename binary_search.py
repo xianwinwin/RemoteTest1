@@ -1,5 +1,5 @@
 import random
-
+from datetime import datetime
 
 class BinarySearch:
 
@@ -23,7 +23,6 @@ class BinarySearch:
 				l = m + 1			
  
 		print ("DID NOT FIND",n,"steps:=",steps, 'arry len:=',len(self.arry))
-		print (self.arry)
 		return False
 
 
@@ -57,11 +56,23 @@ def test3():
 if __name__=='__main__':
 	print ("Start...")
 
+	start = datetime.now()
 	test1()
+	exec_time = (datetime.now() - start).total_seconds()
+	print ("test 1 exec time: ",exec_time)
+
 	print ("*"*32)
+	start = datetime.now()
 	test2()
+	exec_time = (datetime.now() - start).total_seconds()
+	print ("test 2 exec time: ",exec_time)
+
 	print ("*"*32)
+	start = datetime.now()
 	test3()
+	exec_time = (datetime.now() - start).total_seconds()	
+	print ("test 3 exec time: ",exec_time)
+
 
 	print ("END!")
 
