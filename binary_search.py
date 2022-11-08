@@ -89,5 +89,5 @@ if __name__=='__main__':
 	exec_time = (datetime.now() - start).total_seconds()	
 	print ("test 4 exec time: ",exec_time)
 
-	print ("END!")
+	print ("END! but can be better")
 
