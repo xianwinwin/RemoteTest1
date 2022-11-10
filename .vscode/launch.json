@@ -1,0 +1,165 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - MapStream",
+            "request": "launch",
+            "mainClass": "com.java8.MapStream",
+            "projectName": "JUniversity"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - RunLinkedList",
+            "request": "launch",
+            "mainClass": "com.ds.linkedList.RunLinkedList",
+            "projectName": "JUniversity"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - RunStringJoiner",
+            "request": "launch",
+            "mainClass": "com.java8.RunStringJoiner",
+            "projectName": "JUniversity"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - RunStream2",
+            "request": "launch",
+            "mainClass": "com.java8.RunStream2",
+            "projectName": "JUniversity"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - RunStream1",
+            "request": "launch",
+            "mainClass": "com.java8.RunStream1",
+            "projectName": "JUniversity"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - RunOptional",
+            "request": "launch",
+            "mainClass": "com.java8.RunOptional",
+            "projectName": "JUniversity"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Lambda1",
+            "request": "launch",
+            "mainClass": "com.java8.Lambda1",
+            "projectName": "JUniversity"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - StringPermutations",
+            "request": "launch",
+            "mainClass": "com.recursions.StringPermutations",
+            "projectName": "JUniversity"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - PrintStars",
+            "request": "launch",
+            "mainClass": "com.recursions.PrintStars",
+            "projectName": "JUniversity"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - BubbleSort2",
+            "request": "launch",
+            "mainClass": "com.sorts.BubbleSort2",
+            "projectName": "JUniversity"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Termination",
+            "request": "launch",
+            "mainClass": "com.threads.execution.Termination",
+            "projectName": "JUniversity"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ScheduledExecutorServiceDemo",
+            "request": "launch",
+            "mainClass": "com.threads.execution.ScheduledExecutorServiceDemo",
+            "projectName": "JUniversity"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - NewFixedThreadPoolDemo",
+            "request": "launch",
+            "mainClass": "com.threads.execution.NewFixedThreadPoolDemo",
+            "projectName": "JUniversity"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - CountPrimeNumbers",
+            "request": "launch",
+            "mainClass": "com.threads.execution.CountPrimeNumbers",
+            "projectName": "JUniversity"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Hello",
+            "request": "launch",
+            "mainClass": "com.tricks.Hello",
+            "projectName": "JUniversity"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - RunMatrix",
+            "request": "launch",
+            "mainClass": "com.tricks.RunMatrix",
+            "projectName": "JUniversity"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - RunEnum",
+            "request": "launch",
+            "mainClass": "com.tricks.RunEnum",
+            "projectName": "JUniversity"
+        },
+        {
+            "type": "extensionHost",
+            "request": "launch",
+            "name": "Launch Extension",
+            "runtimeExecutable": "${execPath}",
+            "args": [
+                "--extensionDevelopmentPath=${workspaceFolder}"
+            ],
+            "outFiles": [
+                "${workspaceFolder}/out/**/*.js"
+            ],
+            "preLaunchTask": "npm"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - RunDec2Bin",
+            "request": "launch",
+            "mainClass": "com.tricks.RunDec2Bin",
+            "projectName": "JUniversity"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ReverseWord",
+            "request": "launch",
+            "mainClass": "com.tricks.ReverseWord",
+            "projectName": "JUniversity"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ReverseArray",
+            "request": "launch",
+            "mainClass": "com.tricks.ReverseArray",
+            "projectName": "JUniversity"
+        },
+        {
+            "name": "Python: Current File (Integrated Terminal)",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "cwd": "${fileDirname}"
+        }, 
+    ]
+}
