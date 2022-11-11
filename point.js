@@ -8,3 +8,4 @@ yipppi hay continue from here!
 again and again 
 
 in master!
+now continue on dev mode
