@@ -1,77 +1,165 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
-    "version": "0.2.0",
     "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - MapStream",
+            "request": "launch",
+            "mainClass": "com.java8.MapStream",
+            "projectName": "JUniversity"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - RunLinkedList",
+            "request": "launch",
+            "mainClass": "com.ds.linkedList.RunLinkedList",
+            "projectName": "JUniversity"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - RunStringJoiner",
+            "request": "launch",
+            "mainClass": "com.java8.RunStringJoiner",
+            "projectName": "JUniversity"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - RunStream2",
+            "request": "launch",
+            "mainClass": "com.java8.RunStream2",
+            "projectName": "JUniversity"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - RunStream1",
+            "request": "launch",
+            "mainClass": "com.java8.RunStream1",
+            "projectName": "JUniversity"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - RunOptional",
+            "request": "launch",
+            "mainClass": "com.java8.RunOptional",
+            "projectName": "JUniversity"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Lambda1",
+            "request": "launch",
+            "mainClass": "com.java8.Lambda1",
+            "projectName": "JUniversity"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - StringPermutations",
+            "request": "launch",
+            "mainClass": "com.recursions.StringPermutations",
+            "projectName": "JUniversity"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - PrintStars",
+            "request": "launch",
+            "mainClass": "com.recursions.PrintStars",
+            "projectName": "JUniversity"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - BubbleSort2",
+            "request": "launch",
+            "mainClass": "com.sorts.BubbleSort2",
+            "projectName": "JUniversity"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Termination",
+            "request": "launch",
+            "mainClass": "com.threads.execution.Termination",
+            "projectName": "JUniversity"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ScheduledExecutorServiceDemo",
+            "request": "launch",
+            "mainClass": "com.threads.execution.ScheduledExecutorServiceDemo",
+            "projectName": "JUniversity"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - NewFixedThreadPoolDemo",
+            "request": "launch",
+            "mainClass": "com.threads.execution.NewFixedThreadPoolDemo",
+            "projectName": "JUniversity"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - CountPrimeNumbers",
+            "request": "launch",
+            "mainClass": "com.threads.execution.CountPrimeNumbers",
+            "projectName": "JUniversity"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Hello",
+            "request": "launch",
+            "mainClass": "com.tricks.Hello",
+            "projectName": "JUniversity"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - RunMatrix",
+            "request": "launch",
+            "mainClass": "com.tricks.RunMatrix",
+            "projectName": "JUniversity"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - RunEnum",
+            "request": "launch",
+            "mainClass": "com.tricks.RunEnum",
+            "projectName": "JUniversity"
+        },
+        {
+            "type": "extensionHost",
+            "request": "launch",
+            "name": "Launch Extension",
+            "runtimeExecutable": "${execPath}",
+            "args": [
+                "--extensionDevelopmentPath=${workspaceFolder}"
+            ],
+            "outFiles": [
+                "${workspaceFolder}/out/**/*.js"
+            ],
+            "preLaunchTask": "npm"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - RunDec2Bin",
+            "request": "launch",
+            "mainClass": "com.tricks.RunDec2Bin",
+            "projectName": "JUniversity"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ReverseWord",
+            "request": "launch",
+            "mainClass": "com.tricks.ReverseWord",
+            "projectName": "JUniversity"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ReverseArray",
+            "request": "launch",
+            "mainClass": "com.tricks.ReverseArray",
+            "projectName": "JUniversity"
+        },
         {
             "name": "Python: Current File (Integrated Terminal)",
             "type": "python",
             "request": "launch",
             "program": "${file}",
-            "console": "integratedTerminal"
-        },
-        {
-            "name": "Python: Remote Attach",
-            "type": "python",
-            "request": "attach",
-            "port": 5678,
-            "host": "localhost",
-            "pathMappings": [
-                {
-                    "localRoot": "${workspaceFolder}",
-                    "remoteRoot": "."
-                }
-            ]
-        },
-        {
-            "name": "Python: Module",
-            "type": "python",
-            "request": "launch",
-            "module": "enter-your-module-name-here",
-            "console": "integratedTerminal"
-        },
-        {
-            "name": "Python: Django",
-            "type": "python",
-            "request": "launch",
-            "program": "${workspaceFolder}/manage.py",
             "console": "integratedTerminal",
-            "args": [
-                "runserver",
-                "--noreload",
-                "--nothreading"
-            ],
-            "django": true
-        },
-        {
-            "name": "Python: Flask",
-            "type": "python",
-            "request": "launch",
-            "module": "flask",
-            "env": {
-                "FLASK_APP": "app.py"
-            },
-            "args": [
-                "run",
-                "--no-debugger",
-                "--no-reload"
-            ],
-            "jinja": true
-        },
-        {
-            "name": "Python: Current File (External Terminal)",
-            "type": "python",
-            "request": "launch",
-            "program": "${file}",
-            "console": "externalTerminal"
-        },
-        {
-            "name": "Python: env Jupy",
-            "type": "python",
-            "request": "launch",
-            "program": "${file}",
-            "console": "none"
-        }
+            "cwd": "${fileDirname}"
+        }, 
     ]
 }
