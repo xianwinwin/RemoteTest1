@@ -1,16 +1,13 @@
-
 class Node:
 
     def __init__(self, val):
         self.val=val
         self.next = None
 
-
 class Solution:
 
     def reorder_list(self, root):
 
-        print ("im in")
         #step1: get a pointer to the middle
         slow, fast = root, root
         while fast and fast.next:
@@ -18,27 +15,32 @@ class Solution:
             fast = fast.next.next
         
         middle = slow
-        #step2: reverse the link from the nth node to the middle 
+        #step2: reverse the link from the middle node to the nth
         #[7]->[3]->[8]->[12] 
         #      m    nxt
         #[7]->[3]<-[8]<-[12] 
 
+        prv = None
         while middle:
-            nxt = middle.next 
-            tmp  = None
-            if middle.next and middle.next.next:
-                tmp = middle.next.next                
-                nxt.next = middle
-            middle = tmp
+            nxt = middle.next
+            middle.next = prv
+            prv = middle
+            middle = nxt
+        
+        p1 = root
+        p2 = prv
+        #part 3: rehook
+        
+        while p1 and p2: 
+            nxt = p1.next
+            p1.next = p2
+            tmp = p2.next
+            p2.next = nxt
+            p1 = nxt
+            p2 = tmp  
+            
 
-
-        print("*"*32)
-        while root:
-            print(root.val)
-        print("*"*32)
-        #step3: hook nodes 
-
-        return None
+        return root
 
 
 if __name__=='__main__':
@@ -68,9 +70,7 @@ if __name__=='__main__':
 
     print ("and AFTER:")  #[1,12,2,8,7,3]
     s = Solution()
-    s.reorder_list(ptr)
-
-    r = None
+    r = s.reorder_list(ptr)
     while r:
         print(r.val)
         r=r.next
