@@ -1,8 +1,4 @@
-class Node:
 
-    def __init__(self, val):
-        self.val=val
-        self.next = None
 
 class Solution:
 
@@ -22,22 +18,6 @@ class Solution:
         dfs(root)
         return r[0]
         
-
-
-
-class Node():
-    
-    def __init__(self, val):
-        self.val = val
-        self.left = None
-        self.right = None
-
-def get_root2():
-    '''
-                    1
-                2      3
-             4    5
-    '''
 
     n1 = Node(1)
     n2 = Node(2)
