@@ -1,4 +1,4 @@
-
+from utilities import MyUtilities
 
 class Solution:
 
@@ -17,27 +17,13 @@ class Solution:
 
         dfs(root)
         return r[0]
-        
-
-    n1 = Node(1)
-    n2 = Node(2)
-    n3 = Node(3)
-    n4 = Node(4)
-    n5 = Node(5)
-    
-    n1.left = n2
-    n1.right = n3
-    n2.left = n4
-    n2.right = n5
-
-    root = n1
-    return root
 
 
 if __name__=='__main__':
     print ("Start...a")
-    
-    ptr = get_root2()
+
+    ptr = MyUtilities.build_bst([4,6,1,0,12,15,16,20,11])
+    MyUtilities.print_tree(ptr)
 
     s = Solution()
     r = s.depth(ptr) 

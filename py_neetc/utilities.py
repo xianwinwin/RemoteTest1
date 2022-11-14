@@ -1,4 +1,5 @@
 from collections import defaultdict
+from collections import deque
 
 class Node:
 
@@ -45,7 +46,40 @@ class MyUtilities:
 
         dfs(ptr)
         return levels
+
+
+    @staticmethod
+    def build_tree(n):
+        if not n:
+            return None
+
+        dq = deque()
         
+        tn = TreeNode(n[0])
+        dq.append(tn)
+        root = tn
+
+        index = 0
+        while dq:
+            node = dq.popleft()
+            index+=1
+
+            if index>len(n)-1:
+                break 
+
+            node.left = TreeNode(n[index])
+            index+=1
+
+            if index>len(n)-1:
+                break 
+
+            node.right = TreeNode(n[index])
+
+            dq.append(node.left)
+            dq.append(node.right)          
+
+        return root
+
     @staticmethod
     def build_bst(n):
         n.sort()
@@ -83,14 +117,12 @@ class MyUtilities:
         dfs(0,ptr)
         max_level = my_depth[0]+1
         num_spots = len(d[max_level])*15
-
-        h = len(d)        
-        
+ 
         for _,v in d.items():
             line = ''
             for i in v:
                 spaces = ' '*num_spots
-                if not i:
+                if i!=0 and not i:
                     i=''
                 line += spaces+str(i)+spaces
             print(line)
