@@ -94,8 +94,8 @@ class MyUtilities:
             tn.right = dfs(ary[mid+1:])
             return tn
 
-        ptr = dfs(n)
-        return ptr
+        root = dfs(n)
+        return root
 
 
     @staticmethod
