@@ -23,7 +23,7 @@ class Solution:
                 return 
              
             for e in nums:
-                
+                if e not in combo:
                     combo.append(e)
                     dfs(combo)
                     combo.pop()
