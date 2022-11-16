@@ -26,7 +26,7 @@ class Solution:
         nums[pivot-1], nums[ptr] = nums[ptr], nums[pivot-1] 
 
         #sort from pivot to the right 
-        nums[pivot:] = sorted(nums[pivot:])
+        nums[pivot:] = sorted(nums[pivot:])                
         
         
  
