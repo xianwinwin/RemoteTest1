@@ -19,6 +19,27 @@ class TreeNode():
 class MyUtilities:
 
     @staticmethod
+    def build_linked_list(nums):
+
+        last_node = None
+        for i in range(len(nums)-1,-1,-1):
+            n = Node(nums[i])
+            n.next = last_node
+            last_node = n
+
+        return last_node    
+
+    @staticmethod
+    def print_linked_list(root):
+        head = root
+        my_list = []
+        while head:
+            my_list.append('['+str(head.val)+']')
+            head=head.next
+        
+        print ('->'.join(my_list))
+
+    @staticmethod
     def get_tree(ptr, req='pre_order'):
         levels = []
         
