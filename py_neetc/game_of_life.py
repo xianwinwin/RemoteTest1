@@ -1,8 +1,8 @@
-
+#https://leetcode.com/problems/game-of-life/
 
 class Solution:
 
-    def _get_neighbor_value(self, nr,nc):
+    def _get_neighbor_value(self, nr,nc, board):
         if nr<0 or nr>=len(board):
             return 0
         if nc<0 or nc>=len(board[0]):
@@ -16,13 +16,13 @@ class Solution:
         
         return board[nr][nc]
 
-    def _get_neighbors(self, r, c):
+    def _get_neighbors(self, r, c, board):
 
         directions = [(r+1,c),(r-1,c),(r,c+1),(r,c-1),(r+1,c+1),(r-1,c-1),(r+1,c-1),(r-1,c+1)]
         neighbors = 0
         for d in directions:
             nr,nc = d[0],d[1]
-            value = self._get_neighbor_value(nr,nc) 
+            value = self._get_neighbor_value(nr,nc, board) 
             neighbors += value
         
         return neighbors
@@ -41,7 +41,7 @@ class Solution:
         for r in range(ROWS):
             for c in range(COLS):
                 current = board[r][c]
-                neighbors = self._get_neighbors(r,c)
+                neighbors = self._get_neighbors(r,c, board)
 
                 if current==0:
                     #Any dead cell with exactly three live neighbors becomes a live cell, as if by reproduction.
@@ -75,12 +75,19 @@ if __name__=='__main__':
 
     s = Solution()
     board = [[0,1,0],[0,0,1],[1,1,1],[0,0,0]]
-    print ("BEFORE")
-    print (board)
+    ROWS,COLS = len(board), len(board[0])       
+    x=0
+    print ("-----",x,'-----')
+    for c in range(COLS):
+        print (board[c])
 
-    s.gameOfLife(board)
+    for i in range(0,10):        
+        print ("-----",i+1,'-----')
+        s.gameOfLife(board)
+        ROWS,COLS = len(board), len(board[0])        
+        for c in range(COLS):
+            print (board[c])
+                
 
-    print ("AFTER")
-    print (board)
 
     print ("END!")
