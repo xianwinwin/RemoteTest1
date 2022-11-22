@@ -13,6 +13,7 @@ class Solution:
             node_value = node.val
             if not value_left<node_value<value_right:
                 res[0]=False
+                return #no need to continue checking
             
             dfs(node.left, value_left, node_value)
             dfs(node.right, node_value, value_right)
