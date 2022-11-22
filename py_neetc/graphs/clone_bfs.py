@@ -1,5 +1,11 @@
 #https://leetcode.com/problems/clone-graph/
 #133. Clone Graph
+
+'''
+    Whats important here? in BFS it is done iteratively so you clone the Node and then Clone the neighbors.
+    as always: BFS pop from the LEFT and add to the RIGHT
+'''
+
 from collections import deque
 
 class Node:
@@ -21,8 +27,8 @@ class Solution:
         dq = deque() 
         dq.append( node )  
 
-        while dq: 
-            original_node = dq.popleft()
+        while dq: #as long as the dq is full
+            original_node = dq.popleft() #in BFS alwasy pop from the left
 
             cloned_node = graph.get(original_node, None)
             if not cloned_node:
@@ -34,7 +40,7 @@ class Solution:
                 if not cloned_nei:
                     cloned_nei = Node(nei.val)
                     graph[nei]=cloned_nei
-                    dq.append(nei)
+                    dq.append(nei) #in BFS always append ot the right
 
                 cloned_node.neighbors.append(cloned_nei)
  

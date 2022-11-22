@@ -29,7 +29,7 @@ class Solution:
             for nei in node.neighbors:
                 nei_cloned = dfs(nei)
                 cloned_node.neighbors.append(nei_cloned)
-            return cloned_node
+            return cloned_node #you must return the colned node here to avoid None when the dfs return something (either stop case or end of code)
  
         dfs(node)
         return graph[node]
