@@ -6,13 +6,16 @@ class Solution:
     def kth_element(self, root, kth):
         
         levels = []
-        def dfs(node):
+        def dfs(node): 
             if not node:
                 return None
             
             dfs(node.left)
-            levels.append(node.val)            
-            dfs(node.right)
+            levels.append(node.val)
+            if len(levels)>=kth:
+                return None
+
+            dfs(node.right)            
 
         dfs(root)
         print("levels:=",levels)
@@ -22,7 +25,7 @@ class Solution:
 if __name__=='__main__':
     print ("Start...a")
     
-    nums = [3,1,4,2]
+    nums = [3,1,4,2,9,10,12,14,15,16,19,100,102,104,22]
     root = MyUtilities.build_bst(nums)
     MyUtilities.print_tree(root)
     print ("*"*32)

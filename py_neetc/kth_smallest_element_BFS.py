@@ -26,11 +26,13 @@ class Solution:
 if __name__=='__main__':
     print ("Start...a")
     
-    nums = [18,22,54,3,6,15,7,1]
+    nums = [3,2,3,1,2,4,5,5,6]
+    k = 4
+
     root = MyUtilities.build_bst(nums)
     MyUtilities.print_tree(root)
     print ("*"*32)
     s = Solution()
-    r = s.kth_element(root,3) 
+    r = s.kth_element(root,k) 
     print ('r:=',r)
     print ("END!")
