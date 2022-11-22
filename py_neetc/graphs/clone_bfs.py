@@ -35,9 +35,8 @@ class Solution:
                     cloned_nei = Node(nei.val)
                     graph[nei]=cloned_nei
                     dq.append(nei)
- 
-                if cloned_nei not in cloned_node.neighbors:
-                    cloned_node.neighbors.append(cloned_nei)
+
+                cloned_node.neighbors.append(cloned_nei)
  
         return graph[node]
 
