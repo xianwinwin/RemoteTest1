@@ -8,8 +8,6 @@ def playground1():
     MyUtilities.print_tree(root)
     #l = MyUtilities.get_tree(r,req='inorder')
     #print (l)
-    
-
 
 def playground2():
     n = [1,9,14,36,72,66,12,54,7,0]
