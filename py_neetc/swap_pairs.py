@@ -10,21 +10,15 @@ class Solution:
         ptr = dummy
         
         while ptr and ptr.next:
-                
             nxt1 = ptr.next
+            nxt2 = nxt1.next #can be None
 
-            nxt2 = None
-            if nxt1:                
-                nxt2 = ptr.next.next 
-
-            nxt3 = None
             if nxt2:
-                nxt3 = ptr.next.next.next
-
-            ptr.next = nxt2
-            nxt2.next = nxt1
-            nxt1.next = nxt3
-            ptr = nxt1 
+                nxt1.next = nxt2.next
+                nxt2.next = nxt1
+                ptr.next = nxt2
+            
+            ptr = nxt1
 
         return dummy.next
 
