@@ -120,7 +120,7 @@ class MyUtilities:
 
 
     @staticmethod
-    def print_tree(ptr):
+    def print_tree(ptr, init_space=15):
         d = defaultdict(list)
 
         my_depth = [0]
@@ -137,7 +137,7 @@ class MyUtilities:
 
         dfs(0,ptr)
         max_level = my_depth[0]+1
-        num_spots = len(d[max_level])*15
+        num_spots = len(d[max_level])*init_space
  
         for _,v in d.items():
             line = ''
