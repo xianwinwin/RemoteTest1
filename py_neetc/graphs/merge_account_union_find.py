@@ -5,14 +5,10 @@ class Solution:
     def accountsMerge(self, accounts):
 
         def union(e1,e2):
-
-            if e1=='David1@m.co':
-                print ("alt")
-
+ 
             p1 = find(e1)
             p2 = find(e2)
-
-
+ 
             if p1==p2: #same parent (already together)
                 return 
 
@@ -25,7 +21,7 @@ class Solution:
                 ranking[p1]+=ranking[p2]
 
         def find(e):
-            #looking for the father of e  
+            #looking for the father of e  (as dfs);
             if child_parent[e] != e:
                 child_parent[e] = find(child_parent[e])            
             return child_parent[e] 
