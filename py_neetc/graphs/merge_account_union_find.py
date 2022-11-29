@@ -3,30 +3,32 @@ from collections import defaultdict
 class Solution:
 
     def accountsMerge(self, accounts):
-        
+
         def union(e1,e2):
+
+            if e1=='David1@m.co':
+                print ("alt")
+
             p1 = find(e1)
             p2 = find(e2)
 
-            if p1==p2: #same parent
-                return
 
-            #union them together, how? depends on the ranking
+            if p1==p2: #same parent (already together)
+                return 
+
+            #union them together, how? depends on the ranking (bigger takes it all)
             if ranking[p2]>ranking[p1]:
-                child_parent[p1] = p2 
+                child_parent[p1] = p2 #p2 now is the Father
                 ranking[p2]+=ranking[p1]
             else:
                 child_parent[p2] = p1 #p1 is child and p2 is the father
                 ranking[p1]+=ranking[p2]
 
         def find(e):
-            res = e
-            while res!=child_parent[e]:
-                #child_parent[res] = child_parent[child_parent[res]] 
-                res = child_parent[res]
-        
-            return res
-
+            #looking for the father of e  
+            if child_parent[e] != e:
+                child_parent[e] = find(child_parent[e])            
+            return child_parent[e] 
 
         child_parent  = {} #K=child's email, V=parent's email 
         ranking = {}
@@ -39,17 +41,20 @@ class Solution:
                 child_parent[email] = email
                 ranking[email]=1
 
+
         #union graph such that child point to paraent
-        for acc in accounts:
-            emails = acc[1:]
+        for acct in accounts:
+            emails = acct[1:]
             for e1, e2 in zip(emails, emails[1:]):
                 union(e1,e2)
-        
+
+
         #iterate graph to get the parent results with 
         cached = defaultdict(list) #K=parent with list of childs
-        for c,p in child_parent.items():
+        for c in child_parent.keys():
+            p = find(c) #why like this? because we need to know who's the parent of the parent when x=parent[x]
             cached[p].append(c)
-
+ 
         #retrun desired list [[name,[emails],...]]
         res = []
         for p,childs in cached.items():
