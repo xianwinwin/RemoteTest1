@@ -5,25 +5,12 @@ class Solution:
 
     def countComponenets(self, edges):
         
-        #step 1: build a child_parent dictionary where each child IS the parent (for now)
-        #        build rank dictionary so we can tell HOW to associate which set (smaller to bigger and not reversed)
-        my_set = set()
-        for e in edges:
-            my_set.add(e[0])
-            my_set.add(e[1])
-        
-        child_parent = {}#K=child, V=parent
-        rank = {}
-        for i in my_set:
-            child_parent[i]=i
-            rank[i] = 1 #assume 1 for now
                 
         def find(n1): #find root parent
-            res = n1
-            while res!= child_parent[n1]:
-                child_parent[res] = child_parent[child_parent[res]] #if exists (this line is for optimization only!); the grand-pa is the father. So if you have multilple a--b--c--d--e--f so f through b will point to a
-                res = child_parent[res]                
-            return res
+            
+            if n1!=child_parent[n1]:
+                child_parent[n1] = find(child_parent[n1])
+            return child_parent[n1] 
 
         def union(n1,n2):
             #find root parent of each node
@@ -39,6 +26,20 @@ class Solution:
                 child_parent[p2] = p1   #new Parent for p1
                 rank[p1] += rank[p2]
             return 1
+
+
+        #step 1: build a child_parent dictionary where each child IS the parent (for now)
+        #        build rank dictionary so we can tell HOW to associate which set (smaller to bigger and not reversed)
+        my_set = set()
+        for e in edges:
+            my_set.add(e[0])
+            my_set.add(e[1])
+        
+        child_parent = {}#K=child, V=parent
+        rank = {}
+        for i in my_set:
+            child_parent[i]=i
+            rank[i] = 1 #assume 1 for now
 
         #setp 2: assume all links are detached, if we find a union - we decrement a link
         res = len(child_parent)

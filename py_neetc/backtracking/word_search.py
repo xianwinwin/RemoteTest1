@@ -33,7 +33,7 @@ class Solution:
             dfs(r,c+1,word_ptr)                
             dfs(r,c-1,word_ptr)
 
-            visited.remove((r,c))
+            visited.remove((r,c)) 
             return
 
         for r in range(0,ROWS):
