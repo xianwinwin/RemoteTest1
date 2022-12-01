@@ -1,5 +1,8 @@
 #https://www.nayuki.io/page/next-lexicographical-permutation-algorithm
-#see image to understand what needs to be done
+
+# *********************************
+#see image to understand what needs to be done https://www.nayuki.io/res/next-lexicographical-permutation-algorithm/next-permutation-algorithm.svg
+# *********************************
 
 class Solution:
 
@@ -36,10 +39,20 @@ if __name__=='__main__':
     s = Solution()
 
     #nums = [1,3,2] #[1,4,1,2,3,3,5]
-    nums = [0,1,2,5,3,3,0]
+    nums = [0,1,2,3,5,9,8]
     print (nums)
     s.nextPermutation(nums) 
     print ('answer:')
     print (nums)
 
     print ("END!")
+
+    '''
+    Start...
+    [0, 1, 2, 5, 3, 3, 0]
+    [0, 1, 3, 0, 2, 3, 0]
+    answer:
+    [0, 1, 3, 0, 2, 3, 5]
+    END!
+
+    '''
