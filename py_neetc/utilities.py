@@ -85,13 +85,13 @@ class MyUtilities:
             node = dq.popleft()
 
             if not node:
-                print ("AKT")
+                continue
 
             index+=1
 
             if index>len(n)-1:
                 break 
-
+            
             node.left = TreeNode(n[index]) if n[index] else None
             index+=1
 
