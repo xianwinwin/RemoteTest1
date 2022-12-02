@@ -12,20 +12,20 @@ class TreeNode:
 class Solution:
     def isBalanced(self, root) -> bool:
         
+        res = [True]
         def dfs(node):
             if not node:  
-                return [True,0]
+                return 0
             
             left = dfs(node.left) 
             right = dfs(node.right)            
 
-            f1 = left[0] and right[0] 
-            f2 = abs(left[1]-right[1])<=1
-            is_blanced = f1 and f2
-            return [is_blanced, 1+max(left[1],right[1])]
+            if abs(left-right)>1:
+                res[0]=False 
+            return 1+max(left,right)
                 
-        v = dfs(root)  
-        return v[0]
+        dfs(root)  
+        return res[0]
 
 if __name__=='__main__':
     print ("START")
