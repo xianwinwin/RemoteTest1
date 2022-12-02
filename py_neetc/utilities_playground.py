@@ -19,7 +19,11 @@ def playground3():
     r = MyUtilities.build_linked_list(n)
     MyUtilities.print_linked_list(r)
 
+def playground4(): 
+    root = MyUtilities.build_tree( [1,6,2,3,3,None,None,4,5])
+    MyUtilities.print_tree(root, init_space=5)
+
 if __name__=='__main__':
     print ("Start...b")
-    playground3()
+    playground4()
     print ("END!")

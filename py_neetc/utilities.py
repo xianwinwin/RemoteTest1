@@ -82,7 +82,7 @@ class MyUtilities:
 
         index = 0
         while dq:
-            node = dq.popleft()
+            node = dq.popleft() 
             index+=1
 
             if index>len(n)-1:
