@@ -82,19 +82,23 @@ class MyUtilities:
 
         index = 0
         while dq:
-            node = dq.popleft() 
+            node = dq.popleft()
+
+            if not node:
+                print ("AKT")
+
             index+=1
 
             if index>len(n)-1:
                 break 
 
-            node.left = TreeNode(n[index])
+            node.left = TreeNode(n[index]) if n[index] else None
             index+=1
 
             if index>len(n)-1:
                 break 
 
-            node.right = TreeNode(n[index])
+            node.right = TreeNode(n[index]) if n[index] else None
 
             dq.append(node.left)
             dq.append(node.right)          

@@ -30,27 +30,9 @@ class Solution:
 if __name__=='__main__':
     print ("START")
 
-    #n = [8,6,2,9,3,None,None,4,12]
-    #n = [1,2,3,4,5,6,None,8]
-    #root = MyUtilities.build_tree( n )
-    #MyUtilities.print_tree(root, init_space=5)
-    
-    n8 = TreeNode(8)
-    n6 = TreeNode(6)
-    n2 = TreeNode(2)
-    n9 = TreeNode(9)
-    n3 = TreeNode(3)
-    n4 = TreeNode(4)
-    n12 = TreeNode(12)
-
-    n8.left=n6
-    n8.right=n2
-    n6.left = n9
-    n6.right = n3
-    n9.left = n4
-    n9.right= n12
-
-    root = n8
+    n = [8,6,2,9,3,None,None,4,12]   
+    root = MyUtilities.build_tree( n )
+    MyUtilities.print_tree(root, init_space=5)
 
 
     low = 14
