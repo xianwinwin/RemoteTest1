@@ -92,13 +92,13 @@ class MyUtilities:
             if index>len(n)-1:
                 break 
             
-            node.left = TreeNode(n[index]) if n[index] else None
+            node.left = TreeNode(n[index]) if n[index]==0 or n[index] else None
             index+=1
 
             if index>len(n)-1:
                 break 
 
-            node.right = TreeNode(n[index]) if n[index] else None
+            node.right = TreeNode(n[index]) if n[index]==0 or n[index] else None
 
             dq.append(node.left)
             dq.append(node.right)          

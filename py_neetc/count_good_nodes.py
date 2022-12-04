@@ -1,0 +1,34 @@
+from utilities import MyUtilities
+
+class Solution:
+
+    def goodNodes(self, root):
+        
+        res = [0]
+        def dfs(node, max_value):
+            if not node:
+                return 
+            
+            if node.val>=max_value:
+                res[0]=res[0]+1
+            max_value = max(node.val,max_value)
+
+            dfs(node.left, max_value)
+            dfs(node.right, max_value)
+            
+        dfs(root, root.val)
+        return res[0]
+    
+if __name__=='__main__':
+    print ("Start...")
+    n = [3,1,4,3,None,1,5]
+    n = [9,None,3,6]
+    n = [3,3,None,4,2]
+    n = [2,None,4,10,8,None,None,4]
+    ptr = MyUtilities.build_tree(n)
+    MyUtilities.print_tree(ptr, init_space=8)
+
+    s = Solution()
+    r = s.goodNodes(ptr) 
+    print ('r:=',r)
+    print ("END!")

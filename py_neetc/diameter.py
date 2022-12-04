@@ -23,7 +23,7 @@ if __name__=='__main__':
     print ("Start...a")
 
     ptr = MyUtilities.build_bst([4,6,1,0,12,15,16,20,11])
-    MyUtilities.print_tree(ptr)
+    MyUtilities.print_tree(ptr, init_space=5)
 
     s = Solution()
     r = s.depth(ptr) 
