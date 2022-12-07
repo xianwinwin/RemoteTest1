@@ -98,13 +98,16 @@ def query(es):
                 "bool": {
                             "must": {
                                         "match": { "director": 'Thomas H. Ince' },
-                                        "match": { "year": 1993 },                                        
+                                        #"match": { "year": 1993 },                                        
                                     }
                         }
                 }
                  
     res = es.search(index="movies", query=es_query)    
     return res['hits']['hits']
+
+
+
 
 def f1():
     es = ping_es()
