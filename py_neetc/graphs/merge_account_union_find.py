@@ -21,9 +21,9 @@ class Solution:
                 ranking[p1]+=ranking[p2]
 
         def find(e):
-            #looking for the father of e  (as dfs);
+            #looking for the father of e (as dfs) until we get {A:A} that the child is the parent!;
             if child_parent[e] != e:
-                child_parent[e] = find(child_parent[e])            
+                child_parent[e] = find(child_parent[e]) #dfs()      
             return child_parent[e] 
 
         child_parent  = {} #K=child's email, V=parent's email 
