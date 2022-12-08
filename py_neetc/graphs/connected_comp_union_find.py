@@ -4,8 +4,7 @@
 class Solution:
 
     def countComponenets(self, edges):
-        
-                
+         
         def find(n1): #find root parent
             
             if n1!=child_parent[n1]:
