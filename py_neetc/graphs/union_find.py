@@ -1,5 +1,5 @@
 #Redundant Connection - Union Find - Leetcode 684 - Python
-
+#over simplicti version - for REAL union find you should use a DFS for find()
 from collections import defaultdict
 
 class UnionFind:
