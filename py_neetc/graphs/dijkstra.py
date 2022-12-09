@@ -2,6 +2,13 @@ import heapq
 from collections import deque, defaultdict
 import heapq
 
+'''
+    Key items: 
+    1. build adjacent list
+    2. add to heapq the neighbors
+    3. favor the minimum IF not visited already!  
+'''
+
 class Solution:
 
     def shortes_path(self, graph, src, dst):
