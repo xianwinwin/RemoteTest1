@@ -10,7 +10,7 @@ class Solution:
             start = f[0]
             finish = f[1]
             price = f[2]
-            adj[start].append((price,finish,0))                
+            adj[start].append((price,finish,0)) 
  
         #[5]:[($41,7,0),($21,7,0)] postfix 0 is the time to get there 
 
@@ -27,7 +27,7 @@ class Solution:
             item = heapq.heappop(hq)
             price = item[0]
             name = item[1]     
-            connections = item[2] + 1
+            connections = item[2] 
 
             if connections-1>k:
                 continue    
