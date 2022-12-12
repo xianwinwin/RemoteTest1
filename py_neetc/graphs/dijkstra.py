@@ -5,8 +5,11 @@ import heapq
 '''
     Key items: 
     1. build adjacent list
-    2. add to heapq the neighbors
+    2. add to heapq the neighbors (from src)
+    3. iterate from current heapq and always work on the whats the minimum 
     3. favor the minimum IF not visited already!  
+
+    Note: remember to upgrade the weight each time you work on an edge
 '''
 
 class Solution:
