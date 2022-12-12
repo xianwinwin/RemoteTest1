@@ -30,7 +30,7 @@ class Solution:
 
         heapq.heapify(hq)
         visited = set(src)
-
+        
         while hq:
             item = heapq.heappop(hq) #item (weight,to)
             weight = item[0]
@@ -39,17 +39,16 @@ class Solution:
             if to in visited:
                 continue
                 
-            visited.add(to)
-            
+            visited.add(to)            
+
             if to==dst:
                 return weight
 
             for nei in adj[to]:
                 if nei[1] not in visited:
                     heapq.heappush(hq, (nei[0]+weight,nei[1]) )
-            
-            
-        return -1
+                        
+        return -1 #didnt find anything 
         
 
 if __name__=='__main__':

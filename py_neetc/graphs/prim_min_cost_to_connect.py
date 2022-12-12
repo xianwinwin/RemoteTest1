@@ -9,6 +9,7 @@ Return the minimum cost to make all points connected. All points are connected i
 '''
 
 #Prim's algorithm has a time complexity of O(V2), V being the number of vertices and can be improved up to O(E log V) using Fibonacci heaps
+#Why V^2? note how it works: it will 'hook' each point to ALL points (note 2 for loops of assoication)
 
 class Solution:
 
@@ -33,7 +34,7 @@ class Solution:
                 adj[ tuple(p1) ].append( (dist, tuple(p0) ) )
             
         #use minheap to connect the next point
-        min_heap = [ (0, tuple(points[0])) ]
+        min_heap = [ (0, tuple(points[0])) ] #get any point (you can start with the first one)
         visited = set()
         res = 0 
         while min_heap:

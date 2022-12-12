@@ -19,8 +19,7 @@ class Solution:
                 src_prices[to]=float("inf")
         
         for i in range(0,k+1):
-            
-            for nei in adj[]
+            pass 
                         
 
         return []

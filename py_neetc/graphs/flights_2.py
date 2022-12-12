@@ -25,27 +25,17 @@ class Solution:
             hq.append (i)
         heapq.heapify(hq) 
 
-        d = {}
+        routes = []
         while hq:
-
             weight, to, cf = heapq.heappop(hq)
-            print (cf,"-->",to)
-            d[cf]=to
+            print (cf,"-->",to) 
+            routes.append( (cf,to) )
 
-            if to==dst: 
-                routes = [d[src]]                                
-                while True:
-                    frm = routes[-1]                    
-                    to = d.get(frm,None)
-                    if not to:
-                        continue
-                    routes.append(to)
-                    if frm==dst:
-                        break
-                print (routes)
+            if to==dst:  
+                print (routes) #use dikstra_routes_dfs to find the path from src to dst
                 return weight
             
-            for w,t, cf in adj[to]:
+            for w,t, cf in adj[to]: 
                 w+=weight                 
                 heapq.heappush(hq, (w,t, to) )
         

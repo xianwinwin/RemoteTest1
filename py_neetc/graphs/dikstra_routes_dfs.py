@@ -1,5 +1,8 @@
 '''
+
+    inspired from flights_2 you'll get a non circular graph - get the segments from--> to with this method
     with this none circulating path - we can use DFS() to get the route from src to target 
+    https://i.imgur.com/lhdYsv9.png
 '''
 
 import heapq
@@ -50,9 +53,7 @@ class Solution:
 
         res = []
         dfs(d[src], [d[src].val] )
-        print (res)
-
-        return -1
+        return res        
         
 
 if __name__=='__main__':
@@ -63,8 +64,8 @@ if __name__=='__main__':
     tgt = 2
 
     s = Solution()
-    levels = s.find_route(routes, src, tgt)
-    print ('levels:=',levels)
+    res = s.find_route(routes, src, tgt)
+    print ('res:=',res)
 
     print ("END")
     
