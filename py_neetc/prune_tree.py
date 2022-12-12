@@ -43,12 +43,12 @@ if __name__=='__main__':
     n = [1,0,1,0,0,0,1]
     
     ptr = MyUtilities.build_tree(n)
-    MyUtilities.print_tree(ptr, init_space=2)
+    MyUtilities.print_my_tree(ptr)
 
     s = Solution()
     r = s.pruneTree(ptr)
 
     print ("AFTER...")
-    MyUtilities.print_tree(r, init_space=2)
+    MyUtilities.print_my_tree(r)
 
     print ("END")

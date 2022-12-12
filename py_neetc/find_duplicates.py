@@ -1,3 +1,10 @@
+#https://leetcode.com/problems/find-duplicate-subtrees/
+'''
+Given the root of a binary tree, return all duplicate subtrees.
+For each kind of duplicate subtrees, you only need to return the root node of any one of them.
+Two trees are duplicate if they have the same structure with the same node values.
+'''
+
 from utilities import MyUtilities
 from collections import defaultdict
 
@@ -11,8 +18,12 @@ class Solution:
             if not node:
                 return '#'
             
-            my_range = [str(node.val), dfs(path, node.left), dfs(path, node.right)]
+            my_range = []
+            my_range.append(str(node.val))
+            my_range.append(dfs(path, node.left))
+            my_range.append(dfs(path, node.right))
             
+            print (my_range)
             path += ','.join(my_range)
             if d.get(path,None):
                 d[path]=d[path]+1
@@ -31,13 +42,14 @@ if __name__=='__main__':
     print ("Start...")
 
     n = [1,2,3,4,None,2,4,None,None,4]
+    #n = [1,2,3,4,None,5,9,None,None,7]
     #n = [1,2,3,8,None,2,4,None,None,7]
     ptr = MyUtilities.build_tree(n)    
-    MyUtilities.print_tree(ptr, init_space=8)
+    MyUtilities.print_my_tree(ptr)
 
     s = Solution()
     levels = s.findDuplicateSubtrees(ptr) 
     for l in levels:
-        print ('<>'*8)
-        MyUtilities.print_tree(l, init_space=8)            
+        print ('*'*32)
+        MyUtilities.print_my_tree(l)            
     print ("END!")

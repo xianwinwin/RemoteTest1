@@ -30,9 +30,9 @@ class Solution:
 if __name__=='__main__':
     print ("START")
 
-    n = [8,6,2,9,3,None,None,4,12]   
+    n = [8,6,2,9,3,7,None,4,12]   
     root = MyUtilities.build_tree( n )
-    MyUtilities.print_tree(root, init_space=5)
+    MyUtilities.print_my_tree(root)
 
 
     low = 14
