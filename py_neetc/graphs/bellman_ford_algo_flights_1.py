@@ -18,6 +18,8 @@ high leve:
 
     when you iterate like this you will get to the destination with the minimum price UNLESS you stopped earlier
 
+
+Time Complexity of Bellman Ford algorithm is relatively high O ( V ⋅ E ) , in case E = V 2 , O ( V 3 ) .
 '''
 
 import heapq
@@ -47,8 +49,9 @@ class Solution:
                 if prices[s]==float('inf'): 
                     continue
                 if prices[s]+p <temp_prices[d]: # is the price at s can be improved with another way to get there?
-                    temp_prices[d]=prices[s]+p
-            prices = temp_prices
+                    temp_prices[d]=prices[s]+p #updateing the temp_price (for this round!!! not the prices)
+                    
+            prices = temp_prices #at the end you update the prices 
 
         
         if not prices.get(dst,None):

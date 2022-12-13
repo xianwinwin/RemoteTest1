@@ -12,7 +12,7 @@ Return the least number of buses you must take to travel from source to target.
 Return -1 if it is not possible.
 '''
 
-# in correct result - may need to use dijkstra 
+# incorrect result - may need to use dijkstra 
 
 from collections import defaultdict
 from collections import deque

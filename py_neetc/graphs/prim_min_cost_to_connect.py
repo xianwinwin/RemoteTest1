@@ -2,6 +2,9 @@ import heapq
 from collections import defaultdict
 #https://leetcode.com/problems/min-cost-to-connect-all-points/
 
+#Visualization 
+#https://upload.wikimedia.org/wikipedia/commons/9/9b/PrimAlgDemo.gif
+
 '''
 You are given an array points representing integer coordinates of some points on a 2D-plane, where points[i] = [xi, yi].
 The cost of connecting two points [xi, yi] and [xj, yj] is the manhattan distance between them: |xi - xj| + |yi - yj|, where |val| denotes the absolute value of val.
@@ -10,6 +13,12 @@ Return the minimum cost to make all points connected. All points are connected i
 
 #Prim's algorithm has a time complexity of O(V2), V being the number of vertices and can be improved up to O(E log V) using Fibonacci heaps
 #Why V^2? note how it works: it will 'hook' each point to ALL points (note 2 for loops of assoication)
+# Notes:
+# 1. start at any point (add 1 to the min heap)
+# 2. pop from min_heap and add all neighbors to min heap
+# 3. add point to visit (so dont visit again)
+# 4. increment res 
+# 3. repeat until nothing is left in the min heap
 
 class Solution:
 
