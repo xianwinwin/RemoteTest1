@@ -16,62 +16,56 @@ answers, return any of them. If it is impossible to finish all courses, return a
 class Solution:
     def findOrder(self, numCourses: int, prerequisites):
 
+        adj = defaultdict(list) #K=course V = [ pre_req, pre_req ]
         courses = set()
-        adj = defaultdict(list)
-        for p in prerequisites:
-            course = p[0]
-            pre_req = p[1]
+        for item in prerequisites:
+            pre_req = item[0]
+            course  = item[1]
             adj[course].append(pre_req)
             courses.add(course)
             courses.add(pre_req)
 
-
-        def dfs(course):
-            if course in cycle:
-                return False
-            
-            visited.add(course)
-            cycle.add(course)
-            course_prerequisits = adj.get(course,None)
-            if not course_prerequisits:
-                output.append(course) #no prerequisits needed
-            else: 
-                #are all course in output already? 
-                if not set(course_prerequisits) - set(output):
-                    output.append(course)                    
-                for cpr in course_prerequisits:
-                    if cpr not in output:                    
-                        if dfs(cpr)==False:
-                            return False
-                        output.append(course)
-                    return True
-            return True 
-
+        stack = []
         visited = set()
-        cycle = set()
-        output = []
-        for c in courses:
-            if c not in output:
-                if dfs(c)==False:
-                    return []                
-                cycle.remove(c)
-                visited = set()
-        
-        if len(output)<numCourses:
-            missing_courses = numCourses - len(output)
-            for i in range(len(output),len(output) + missing_courses):
-                output.append(i)
+        cycle = []
 
-        return output
+        #get to the last course that has no pre-req and add to the stack and then add the course that was K in the adj
+        def dfs(course):
+            if course in visited:
+                return
+
+            pre_reqs = adj.get(course, None)
+            if not pre_reqs:
+                stack.append(course)
+                visited.add(course)
+                return 
+            
+            for c in pre_reqs:
+                dfs(c)
+                if set(pre_reqs).issubset(visited):
+                    stack.append(course) #add the K to the stack
+                    visited.add(course)
+                return 
+
+        #itearate all courses 
+        while len(visited)!=len(courses):
+            for c in courses:
+                dfs(c)
+
+        res = list(reversed(stack))
+        for i in range(len(res),numCourses):
+            res.append(i)
+        return res
     
 if __name__=='__main__':
     print ("START...")
 
-    numCourses = 4
-    prerequisites = [[1,0],[2,0],[3,1],[3,2]]
+    #numCourses = 4
+    #prerequisites = [[1,0],[2,0],[3,1],[3,2]]
+
 
     numCourses = 13
-    prerequisites = [[0,1]]
+    prerequisites = [[0,1],[1,0]]
 
     s = Solution()
     res = s.findOrder(numCourses, prerequisites)
