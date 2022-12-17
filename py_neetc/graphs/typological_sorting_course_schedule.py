@@ -12,7 +12,6 @@ Return the ordering of courses you should take to finish all courses. If there a
 answers, return any of them. If it is impossible to finish all courses, return an empty array.
 '''
 
-
 class Solution:
     def findOrder(self, numCourses: int, prerequisites):
 
@@ -28,11 +27,9 @@ class Solution:
         stack = []
         visited = set() 
 
-        #get to the last course that has no pre-req and add to the stack and then add the course that was K in the adj
+        #get to the last course that has no pre-req and add to the stack and then add 
+        # the course that was K in the adj
         def dfs(course):
-            if course in cycle:
-                return False
-            cycle.add(course)
 
             if course in visited:
                 return True
@@ -44,20 +41,17 @@ class Solution:
                 return True
             
             for c in pre_reqs:
-                if dfs(c)==False:
-                    return False
-                if set(pre_reqs).issubset(visited):
+                dfs(c)
+                if set(pre_reqs).issubset(visited): #if all pre_requesits are in the visited - you can add the course ()
                     stack.append(course) #add the K to the stack
                     visited.add(course)
-                return 
+                return True
 
         #itearate all courses 
-        while len(visited)!=len(courses):
+        while len(visited)!=len(courses):            
             for c in courses:
-                cycle = set()
-                if dfs(c)==False:
-                    print ("cycle was foudn <-----")
-                    return [] 
+                if dfs(c) == False:
+                    return []
 
         res = list(reversed(stack))
         for i in range(len(res),numCourses):
@@ -69,14 +63,13 @@ if __name__=='__main__':
 
     numCourses = 4
     prerequisites = [[1,0],[2,0],[3,1],[3,2]]
+    
+    #numCourses = 13
+    #prerequisites = [[0,1],[1,0]]
 
-    numCourses = 13
-    prerequisites = [[0,1],[1,0]]
-
-    numCourses = 3
-    prerequisites = [[1,0],[2,0],[0,2]]
-
-
+    #numCourses = 3
+    #prerequisites = [[1,0],[2,0],[0,2]]
+    
     s = Solution()
     res = s.findOrder(numCourses, prerequisites)
     print ('res:=',res)
