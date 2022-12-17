@@ -34,7 +34,7 @@ class Solution:
 if __name__=='__main__':
     print ("Start...")
 
-    digits = "22233"
+    digits = "233"
     s = Solution()
     res = s.letterCombinations(digits) 
     print (res)
