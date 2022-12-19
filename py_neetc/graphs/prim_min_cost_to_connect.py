@@ -11,7 +11,7 @@ The cost of connecting two points [xi, yi] and [xj, yj] is the manhattan distanc
 Return the minimum cost to make all points connected. All points are connected if there is exactly one simple path between any two points.
 '''
 
-#Prim's algorithm has a time complexity of O(V2), V being the number of vertices and can be improved up to O(E log V) using Fibonacci heaps
+#Prim's algorithm has a time complexity of O(V^2), V being the number of vertices and can be improved up to O(E log V) using Fibonacci heaps
 #Why V^2? note how it works: it will 'hook' each point to ALL points (note 2 for loops of assoication)
 # Notes:
 # 1. start at any point (add 1 to the min heap)
