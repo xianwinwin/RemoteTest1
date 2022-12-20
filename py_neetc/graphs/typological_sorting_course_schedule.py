@@ -44,14 +44,14 @@ class Solution:
                 visited.add(course)
                 return True
 
-            cycle.add(course)    
+            cycle.add(course)  #note we put it here AFTER checking if there's no pre_req    
             for c in pre_reqs:
                 if dfs(c)==False:
                     return False
 
             stack.append(course)
             visited.add(course)
-            cycle.remove(course)    
+            cycle.remove(course)     #removing the cycle BECAUSE we reached a point in DFS where we backtracked
 
         #itearate all courses 
         while len(visited)!=len(courses):            
