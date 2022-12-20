@@ -26,11 +26,15 @@ class Solution:
 
         stack = []
         visited = set() 
+        cycle = set()
 
         #get to the last course that has no pre-req and add to the stack and then add 
         # the course that was K in the adj
         def dfs(course):
-
+            
+            if course in cycle:
+                return False
+            
             if course in visited:
                 return True
 
@@ -39,28 +43,36 @@ class Solution:
                 stack.append(course)
                 visited.add(course)
                 return True
-            
+
+            cycle.add(course)    
             for c in pre_reqs:
-                dfs(c)
-                if set(pre_reqs).issubset(visited): #if all pre_requesits are in the visited - you can add the course ()
-                    stack.append(course) #add the K to the stack
-                    visited.add(course)
-                return True
+                if dfs(c)==False:
+                    return False
+
+            stack.append(course)
+            visited.add(course)
+            cycle.remove(course)    
 
         #itearate all courses 
         while len(visited)!=len(courses):            
             for c in courses:
                 if dfs(c) == False:
                     return []
-
-        res = list(reversed(stack))
-        for i in range(len(res),numCourses):
-            res.append(i)
-        return res
+        
+        course_number = 0
+        while len(stack)<numCourses:
+            if course_number not in stack:
+                stack.append(course_number)
+            course_number+=1
+        
+        stack = list(reversed(stack))
+        return stack 
     
 if __name__=='__main__':
     print ("START...")
 
+    # HOW TO READ?
+    # [pre_req, class] --> to take class 0 you'll need class 1
     numCourses = 4
     prerequisites = [[1,0],[2,0],[3,1],[3,2]]
     
@@ -70,6 +82,9 @@ if __name__=='__main__':
     #numCourses = 3
     #prerequisites = [[1,0],[2,0],[0,2]]
     
+    numCourses = 6
+    prerequisites = [[4,6],[4,3],[4,5],[3,1],[1,8],]#[8,4]]
+
     s = Solution()
     res = s.findOrder(numCourses, prerequisites)
     print ('res:=',res)
