@@ -12,10 +12,10 @@ class Solution:
                 res.append(combo[:])
                 return
                                 
-            combo.append(nums[index]) #add item
+            combo.append(nums[index]) #add item (say X)
             dfs(index+1,combo)
-            combo.pop() #do not include item
-            dfs(index+1,combo)
+            combo.pop() #do not include item X
+            dfs(index+1,combo) #note combo DOESNT have X 
 
         dfs(0,[])
         return res
@@ -27,7 +27,7 @@ if __name__=='__main__':
 
     s = Solution()
 
-    nums = [1,2,3]
+    nums = [1,2,3,4]
     sets = s.subsets(nums)  
     for s in sets:
         print (s)
