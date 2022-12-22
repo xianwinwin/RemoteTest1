@@ -9,7 +9,7 @@ class Solution:
             p1 = find(e1)
             p2 = find(e2)
  
-            if p1==p2: #same parent (already together)
+            if p1==p2: #same parent (already together, move on!)
                 return 
 
             #union them together, how? depends on the ranking (bigger takes it all)
@@ -21,10 +21,10 @@ class Solution:
                 ranking[p1]+=ranking[p2]
 
         def find(e):
-            #looking for the father of e (as dfs) until we get {A:A} that the child is the parent!;
-            if child_parent[e] != e:
-                child_parent[e] = find(child_parent[e]) #dfs()      
-            return child_parent[e] 
+            if e==child_parent[e]:
+                return e
+            return find(child_parent[e])
+
 
         child_parent  = {} #K=child's email, V=parent's email 
         ranking = {}
@@ -37,13 +37,11 @@ class Solution:
                 child_parent[email] = email
                 ranking[email]=1
 
-
         #union graph such that child point to paraent
         for acct in accounts:
             emails = acct[1:]
             for e1, e2 in zip(emails, emails[1:]):
                 union(e1,e2)
-
 
         #iterate graph to get the parent results with 
         cached = defaultdict(list) #K=parent with list of childs
