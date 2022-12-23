@@ -1,4 +1,4 @@
-#Directed acyclic graph
+#DAG = Directed Acyclic Graph
 
 '''
     Note: after you established the adjacent hast map you'll note 2 sets:
@@ -7,7 +7,6 @@
     The visit, on the other hand will ensure that we dont churn the adjuscent list
     over and over. If you visited this c before - move to the next one. 
 '''
-
 
 from collections import defaultdict
 

@@ -11,43 +11,46 @@ in the graph.
 Return an edge that can be removed so that the resulting graph is a tree of n nodes. 
 If there are multiple answers, return the answer that occurs last in the input.
 '''
+
+#note: this is an over simplification of Union-Find. Can be implemented properly with dfs()
+
 from collections import defaultdict
 
 class UnionFind:
 
     def findRedundantConnection(self, edges):
-        self.graph = defaultdict(list)
 
         def union(px,py):
 
             if px==py:
                 return False
 
-            values_x = self.graph.get(px,None)
-            values_y = self.graph.get(py,None) 
+            values_x = graph.get(px,None)
+            values_y = graph.get(py,None) 
 
             if (not values_x and not values_y) or (values_x and not values_y):
-                self.graph[px].append(py)
+                graph[px].append(py)
             elif values_y and not values_x:
-                self.graph[py].append(px)
+                graph[py].append(px)
             elif values_x and values_y: 
-                del self.graph[py]
-                self.graph[px].extend(values_y)
-                self.graph[px].append(py)
+                del graph[py]
+                graph[px].extend(values_y)
+                graph[px].append(py)
             
             return True
         
         def find(item):
             #find the parent, if none exists - return the item as a parent
-            if self.graph.get(item, None):
+            if graph.get(item, None):
                 return item
 
-            for k,v in self.graph.items():
+            for k,v in graph.items():
                 if item in v:
                     return k
             
             return item
 
+        graph = defaultdict(list)
         for e in edges:            
             x,y = e[0], e[1]    
 
@@ -67,5 +70,4 @@ if __name__=='__main__':
     e = uf.findRedundantConnection(edges)
     print ('e:=',e)
     
-
     print ("END")

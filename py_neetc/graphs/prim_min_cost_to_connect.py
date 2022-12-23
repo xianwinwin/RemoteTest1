@@ -47,7 +47,7 @@ class Solution:
         visited = set()
         res = 0 
         while min_heap:
-            dist, my_point = heapq.heappop(min_heap)             
+            dist, my_point = heapq.heappop(min_heap)
             #did we visit this point before? 
             if my_point in visited:
                 continue
