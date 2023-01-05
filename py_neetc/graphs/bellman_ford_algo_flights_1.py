@@ -60,7 +60,6 @@ class Solution:
             return -1
         return prices[dst]
         
-
 if __name__=='__main__':
     print ("Start...")
   
@@ -75,6 +74,5 @@ if __name__=='__main__':
     s = Solution()
     price = s.findCheapestPrice(n,flights,src,dst,k)
     print ('price:=',price)
-
     print ("END")
     

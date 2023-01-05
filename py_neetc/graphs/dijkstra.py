@@ -46,7 +46,7 @@ class Solution:
 
             for nei in adj[to]:
                 if nei[1] not in visited:
-                    heapq.heappush(hq, (nei[0]+weight,nei[1]) )
+                    heapq.heappush(hq, (nei[0]+weight,nei[1]) ) #note: adding weight
                         
         return -1 #didnt find anything 
         
