@@ -3,7 +3,7 @@ class TrieNode:
 
     def __init__(self):
         self.children = {} #K=charechter; V=TrieNode
-        self.word = False
+        self.word = False #note, the word by default is False unless specfied as True (at the end)
 
 class WordDictionary:
 
@@ -55,7 +55,13 @@ if __name__=='__main__':
     wd.addWord("bandit")
     wd.addWord("swindle")
     wd.addWord("qqq")
-     
+
+    f = wd.search("bamba")
+    print ("is bamb:=",f)
+    
+    f = wd.search("SPY")
+    print ("is SPY:=",f)
+
     word = 'ab.'
     f = wd.search(word)
     print ("f:=",f)

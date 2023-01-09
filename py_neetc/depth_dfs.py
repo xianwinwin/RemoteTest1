@@ -22,7 +22,7 @@ if __name__=='__main__':
     print ("Start...")
 
     ptr = MyUtilities.build_tree([4,6,1,0,12,15,16,20,11])
-    MyUtilities.print_tree(ptr)
+    MyUtilities.print_my_tree(ptr)
 
     s = Solution()
     levels = s.get_depth(ptr) 

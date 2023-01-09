@@ -1,5 +1,16 @@
 from utilities import MyUtilities
 
+'''
+https://leetcode.com/problems/validate-binary-search-tree/
+Given the root of a binary tree, determine if it is a valid binary search tree (BST).
+
+A valid BST is defined as follows:
+
+The left subtree of a node contains only nodes with keys less than the node's key.
+The right subtree of a node contains only nodes with keys greater than the node's key.
+Both the left and right subtrees must also be binary search trees.
+'''
+
 class Solution:
 
     def is_valid(self, root):
@@ -24,10 +35,9 @@ class Solution:
 
 if __name__=='__main__':
     print ("Start...a")
-
-    #ptr = MyUtilities.build_bst([4,6,1,0,12,15,16,20,11])
+ 
     ptr = MyUtilities.build_tree([4,6,1,0,12,15,16,20,11])
-    MyUtilities.print_tree(ptr)
+    MyUtilities.print_my_tree(ptr)
 
     s = Solution()
     r = s.is_valid(ptr) 

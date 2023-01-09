@@ -32,7 +32,7 @@ if __name__=='__main__':
     n = [3,3,None,4,2]
     n = [2,None,4,10,8,None,None,4]
     ptr = MyUtilities.build_tree(n)
-    MyUtilities.print_tree(ptr, init_space=8)
+    MyUtilities.print_my_tree(ptr)
 
     s = Solution()
     r = s.goodNodes(ptr) 
