@@ -1,6 +1,12 @@
 from utilities import MyUtilities
 from collections import deque
 
+
+'''
+https://leetcode.com/problems/symmetric-tree/
+Given the root of a binary tree, check whether it is a mirror of itself (i.e., symmetric around its center).
+'''
+
 class Solution:
     def isSymmetric(self, root) -> bool:
         
@@ -22,8 +28,7 @@ class Solution:
                     dq.append(node.right)
                 else:
                     levels.append(None)
-                     
-
+                    
             #check symetric on levels:
             m = len(levels)-1
             l = 0 
@@ -38,10 +43,8 @@ if __name__=='__main__':
     print ("START")
 
     root = MyUtilities.build_tree([1,2,2,3,4,4,3])
-    MyUtilities.print_tree(root, init_space=5)
-
-    low = 14
-    high = 34
+    MyUtilities.print_my_tree(root)
+ 
     s = Solution()
     r = s.isSymmetric(root)
     print ("is symmetric?:=",r)
