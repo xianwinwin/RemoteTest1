@@ -1,5 +1,14 @@
 #https://leetcode.com/problems/balanced-binary-tree/
 
+'''
+Given a binary tree, determine if it is height-balanced.
+
+Definition: height-balanced binary tree is a binary tree in which the depth of the two 
+            subtrees of every node never differs by more than one.
+
+https://www.youtube.com/watch?v=QfJsau0ItOY
+'''
+
 from utilities import MyUtilities
 from collections import defaultdict
 
@@ -30,7 +39,7 @@ class Solution:
 if __name__=='__main__':
     print ("START")
 
-    n = [8,6,2,9,3,7,None,4,12]   
+    n = [8,6,2,9,3,7,None,4,12,None,None,None,None,11]   
     root = MyUtilities.build_tree( n )
     MyUtilities.print_my_tree(root)
 
@@ -39,6 +48,6 @@ if __name__=='__main__':
     high = 34
     s = Solution()
     r = s.isBalanced(root)
-    print ("is symmetric?:=",r)
+    print ("is isBalanced?:=",r)
 
     print ("END")

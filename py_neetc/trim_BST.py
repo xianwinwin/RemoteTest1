@@ -25,8 +25,8 @@ class Solution:
             elif node.val < low:
                 return dfs(node.right)
             else:
-                #node.left = dfs(node.left)
-                #node.right = dfs(node.right)
+                node.left = dfs(node.left)
+                node.right = dfs(node.right)
                 return node
 
         return dfs(root)
