@@ -28,7 +28,7 @@ class Solution:
             if total>target:
                 return
             
-            for e in candidates:
+            for e in candidates: #note, you can send an index here instead of iterations BUT you'll have 2 dfs()
                 combo.append(e)
                 dfs(combo)
                 combo.pop()
