@@ -3,7 +3,7 @@ from datetime import datetime
 
 class Solution:
 
-    def combine(self, nunms,k):
+    def combine(self, n,k):
 
         res = []
         def dfs(index, combo):
@@ -15,8 +15,8 @@ class Solution:
                 combo.append(i)
                 dfs(i+1,combo)
                 combo.pop()
-
-        dfs(1, [])
+                
+        dfs(0, [])
         return res
         
  
@@ -26,7 +26,7 @@ if __name__=='__main__':
 
     s = Solution()
 
-    n = 4
+    n = 5
     k = 2
     perms = s.combine(n,k) 
     

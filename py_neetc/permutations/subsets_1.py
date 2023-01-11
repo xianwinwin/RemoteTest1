@@ -27,7 +27,7 @@ if __name__=='__main__':
 
     s = Solution()
 
-    nums = [1,2,3,4]
+    nums = ['a','b','c','d']
     sets = s.subsets(nums)  
     for s in sets:
         print (s)
