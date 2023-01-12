@@ -1,31 +1,45 @@
+'''
+https://leetcode.com/problems/number-of-islands/description/
+200. Number of Islands
+Given an m x n 2D binary grid grid which represents a map of '1's (land) and '0's (water), return the number of islands.
+An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. 
+You may assume all four edges of the grid are all surrounded by water.
+'''
 
 class Solution:
+    
     def numIslands(self, grid) -> int:
-         
+        
         ROWS, COLS = len(grid), len(grid[0])
-        visited = set()
 
-        res = [False]
         def dfs(r,c):
-            if (r,c) in visited or r>=ROWS or c>=COLS or r<0 or c<0 or grid[r][c]=='0':
+            #already visited?
+            if  (r,c) in visited: 
                 return 
-
-            visited.add((r,c))
-            if grid[r][c]=='1':
-                res[0]=True
+            #out of bound?
+            if r>=ROWS or c>=COLS or r<0 or c<0:
+                return 
             
-            directions = [ (r-1,c),(r+1,c),(r,c+1),(r,c-1) ]
-            for dir in directions:                
-                dfs(dir[0],dir[1])
+            #value is 0
+            if grid[r][c]=='0':
+                return
 
+            visited.add((r,c)) #mark it so dont count again
+
+            directions = [(r,c+1),(r,c-1),(r-1,c),(r+1,c)]
+            for dir in directions:
+                dr = dir[0]
+                dc = dir[1]
+                dfs(dr,dc)
+
+
+        visited = set()
         islands = 0
         for r in range(ROWS):
             for c in range(COLS):
-                if grid[r][c]=='1':
+                if grid[r][c]=='1' and (r,c) not in visited:
                     dfs(r,c)
-                    if res[0]:
-                        islands+=1
-                    res[0]=False
+                    islands+=1
 
         return islands
         
@@ -35,8 +49,8 @@ if __name__=='__main__':
 
     grid = [
         ["1","1","0","0","1"],
-        ["1","1","0","0","0"],
-        ["0","0","1","0","0"],
+        ["1","1","0","0","1"],
+        ["0","0","1","0","1"],
         ["0","0","0","1","1"]
     ]
 
