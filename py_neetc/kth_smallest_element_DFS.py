@@ -27,7 +27,7 @@ if __name__=='__main__':
     
     nums = [3,1,4,2,9,10,12,14,15,16,19,100,102,104,22]
     root = MyUtilities.build_bst(nums)
-    MyUtilities.print_tree(root)
+    MyUtilities.print_my_tree(root)
     print ("*"*32)
     s = Solution()
     r = s.kth_element(root,1) 

@@ -1,5 +1,4 @@
 
-import heapq
 from collections import deque
 
 class Solution:
@@ -7,7 +6,7 @@ class Solution:
         
         visited = set()
         rottens = deque()
-        ROWS, COLS = len(grid)
+        ROWS = len(grid)
         COLS = len(grid[0])
         directions = [(0,1),(1,0),(-1,0),(0,-1)]
 

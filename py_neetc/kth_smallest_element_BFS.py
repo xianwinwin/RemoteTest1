@@ -30,7 +30,7 @@ if __name__=='__main__':
     k = 4
 
     root = MyUtilities.build_bst(nums)
-    MyUtilities.print_tree(root)
+    MyUtilities.print_my_tree(root)
     print ("*"*32)
     s = Solution()
     r = s.kth_element(root,k) 
