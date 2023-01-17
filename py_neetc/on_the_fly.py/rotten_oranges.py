@@ -45,7 +45,7 @@ class Solution:
         t=-1
         while rottens: #as long as there are rottens
             len_rotten = len(rottens)
-            for x in range(0, len_rotten): #current round
+            for _ in range(0, len_rotten): #current round
                 r = rottens.popleft()
                 x,y = r[0],r[1] #get coordinates to move to other adjacent cells
             

@@ -8,10 +8,10 @@ class Solution:
         res.append(first_row)
 
         for i in range(1,n+1):
-            prev = res[i-1]
+            prev_line = res[i-1]
             
             new_line = []
-            for j,k in zip(prev,prev[1:]):
+            for j,k in zip(prev_line,prev_line[1:]):
                 new_line.append(j+k)
 
             row = [1] + new_line + [1]
@@ -36,4 +36,6 @@ if __name__=='__main__':
        [1,1]
       [1,2,1]
      [1,3,3,1]
+    [1,4,6,4,1]
+  [1,5,10,10,5,1]
 '''

@@ -14,13 +14,10 @@ import heapq
 
 class Solution:
 
-    def shortes_path(self, graph, src, dst):
+    def shortest_path(self, graph, src, dst):
         
         adj = defaultdict(list) #K=edge, V= [ (weight,dest), (weight,dest)... ]
-        for g in graph:
-            frm = g[0]
-            to = g[1]
-            weight = g[2]
+        for frm, to, weight in graph:
             adj[frm].append( (weight,to) ) 
             adj[to].append( (weight,frm) ) #bidirectional 
 
@@ -32,9 +29,7 @@ class Solution:
         visited = set(src)
         
         while hq:
-            item = heapq.heappop(hq) #item (weight,to)
-            weight = item[0]
-            to = item[1]
+            weight, to = heapq.heappop(hq) #item (weight,to)
 
             if to in visited:
                 continue
@@ -44,9 +39,9 @@ class Solution:
             if to==dst:
                 return weight
 
-            for nei in adj[to]:
-                if nei[1] not in visited:
-                    heapq.heappush(hq, (nei[0]+weight,nei[1]) ) #note: adding weight
+            for neiw, nei in adj[to]:
+                if nei not in visited:
+                    heapq.heappush(hq, (neiw+weight,nei) ) #note: adding weight
                         
         return -1 #didnt find anything 
         
@@ -60,7 +55,7 @@ if __name__=='__main__':
     src = 'A'
     dst = 'C'
 
-    price = s.shortes_path(graph, src, dst)
+    price = s.shortest_path(graph, src, dst)
     print ('price:=',price)
 
     print ("END")
