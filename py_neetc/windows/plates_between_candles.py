@@ -19,8 +19,7 @@ Return an integer array answer where answer[i] is the answer to the ith query.
 class Solution:
 
     def platesBetweenCandles(self, s, queries):
-
-        #my_str = "**|||*|*||**|*"
+ 
         left_indexes = []
         last_bar_index = -1
         for i, c in enumerate(s):
