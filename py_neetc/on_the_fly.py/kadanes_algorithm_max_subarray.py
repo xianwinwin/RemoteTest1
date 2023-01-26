@@ -5,7 +5,6 @@ Maximum Subarray: Given an integer array nums, find the
 Input: nums = [-2,1,-3,4,-1,2,1,-5,4]
 Output: 6
 Explanation: The subarray [4,-1,2,1] has the largest sum 6.
-
 ''' 
 
 class Solution:
@@ -34,6 +33,7 @@ class Solution:
 if __name__=='__main__':
     print ("start...")
     
+    nums = [1,2,0,3,5,-3,8,3]
     nums = [-2,1,-3,4,-1,2,1,-5,4]
     s = Solution()     
     r = s.maxSubArray(nums)
