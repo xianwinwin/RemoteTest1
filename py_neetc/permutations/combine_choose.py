@@ -16,7 +16,7 @@ class Solution:
                 dfs(i+1,combo)
                 combo.pop()
                 
-        dfs(0, [])
+        dfs(1, [])
         return res
         
  
@@ -27,7 +27,7 @@ if __name__=='__main__':
     s = Solution()
 
     n = 5
-    k = 2
+    k = 5
     perms = s.combine(n,k) 
     
     for p in perms:
