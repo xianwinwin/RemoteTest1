@@ -39,6 +39,5 @@ if __name__=='__main__':
     s = Solution()
     f = s.hasCycle(head)
     print ("\nfound cycle? ",f)
-
-
+    
     print ("END")

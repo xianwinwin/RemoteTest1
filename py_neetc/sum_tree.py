@@ -23,7 +23,7 @@ if __name__=='__main__':
 
     n = [1,8,7,4,2,3] 
     ptr = MyUtilities.build_tree(n)    
-    MyUtilities.print_tree(ptr, init_space=5)
+    MyUtilities.print_my_tree(ptr)
 
     s = Solution()
     s.analysis(ptr)  
