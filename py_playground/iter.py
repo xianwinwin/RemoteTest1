@@ -13,7 +13,7 @@ class LinkedList:
     def __iter__(self): 
         self.cur = self.head
         return self
-
+    
     def __next__(self):
 
         if self.cur: 
