@@ -1,5 +1,23 @@
-#https://www.youtube.com/watch?v=REOH22Xwdkk
-#Subsets - Backtracking - Leetcode 78
+'''
+https://leetcode.com/problems/subsets/
+Given an integer array nums of unique elements, return all possible 
+The solution set must not contain duplicate subsets. Return the solution in any order.
+
+Input: nums = [1,2,3]
+Output: [[],[1],[2],[1,2],[3],[1,3],[2,3],[1,2,3]]
+
+https://www.youtube.com/watch?v=REOH22Xwdkk
+Subsets - Backtracking - Leetcode 78
+
+Note: the order is NOT important:
+['a', 'b', 'c', 'd'] = ['a', 'b', 'd', 'c']
+we're only liiking for the subsets:
+['a', 'b', 'c', 'd']
+['a', 'b', 'c']
+so you don't have to ask if the item is in (like in permutation)
+'''
+
+
 from datetime import datetime
 
 class Solution:
