@@ -17,7 +17,7 @@ class Solution:
             else:
                 l=m+1
             
-        return -1
+        return m
 
 
 if __name__=='__main__':
@@ -26,7 +26,7 @@ if __name__=='__main__':
     s = Solution()
 
     nums = [1,6,9,12,14,23,24,25,26,30,31,32,33,37,41,44,45,55]
-    target = 45
+    target = 46
     res = s.get_value(nums,target)
     print (res) 
     print ("END ")

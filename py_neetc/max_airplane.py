@@ -24,6 +24,7 @@ if __name__=='__main__':
     print ("Start")
     flights = [(4,9),(2,5),(17,20),(10,21),(9,18)]
     flights = [(1,2),(3,5),(6,10),(11,20),(4,8),(1,30),(4,6)]
+    flights = [(2,4),(4,9),(7,10),(9,13),(8,11)]
 
     s = Solution()
     maxf = s.get_max_flights(flights)

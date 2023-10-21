@@ -37,7 +37,7 @@ class Solution:
 if __name__=='__main__':
     print ('start...')
 
-    str = 'abcabcbb'
+    str = 'abcabcbbacser'
     s = Solution()
     res = s.lengthOfLongestSubstring(str)
     print (res)
