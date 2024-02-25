@@ -51,7 +51,7 @@ if __name__=='__main__':
     
     exec_time = (datetime.now() - started).total_seconds()
     print (f"Ended in {exec_time} seconds")
-
+ssh-add ~/.ssh/id_rsa ssh-add ~/.ssh/git_mac_uws
 '''
  n = [ ,6, , , , , ,18, , ]
  
